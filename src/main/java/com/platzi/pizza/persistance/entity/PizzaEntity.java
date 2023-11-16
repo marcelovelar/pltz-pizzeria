@@ -27,12 +27,15 @@ public class PizzaEntity {
     private Double price;
 
     @Column(columnDefinition = "SMALLINT")
+    @Convert(converter = BooleanToSmallintConverter.class)
     private Boolean vegetarian;
 
     @Column(columnDefinition = "SMALLINT", nullable = false)
+    @Convert(converter = BooleanToSmallintConverter.class)
     private Boolean vegan;
 
-    @Column(columnDefinition = "SMALLINT", nullable = false)
+    @Column(columnDefinition = "smallint", nullable = false)
+    @Convert(converter = BooleanToSmallintConverter.class)
     private Boolean available;
 
 }
