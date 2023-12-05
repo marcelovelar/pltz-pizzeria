@@ -14,7 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
-public class OrderEntity {
+public class   OrderEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,7 +42,9 @@ public class OrderEntity {
     @JsonIgnore
     private CustomerEntity customer;
 
+
     @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+    @OrderBy("price desc")
     private List<OrderItemEntity> items;
 
 }
